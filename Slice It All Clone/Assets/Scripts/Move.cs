@@ -4,20 +4,39 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    Rigidbody _rb;
+    public Rigidbody rb;
+    bool touched;
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.start)
         {
-            _rb.isKinematic = false;
-            _rb.velocity = new Vector3(0,5,2);
-            _rb.angularVelocity = new Vector3(6.6f,0,0);
+            touched = true;
+            rb.isKinematic = false;
+            rb.velocity = new Vector3(0,5,2);
+            rb.angularVelocity = new Vector3(6.6f,0,0);
+        }
+        if (touched)
+        {
+            rb.isKinematic = false;
+            Invoke("TouchedFalse", 0.1f);
         }
     }
+    public void KnifeStartingPosition()
+    {
+        transform.position = new Vector3(0, 2, -22f);
+        transform.eulerAngles = new Vector3(41, 0, 0);
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+    }
+    void TouchedFalse()
+    {
+        touched = false;
+    }
+        
 }

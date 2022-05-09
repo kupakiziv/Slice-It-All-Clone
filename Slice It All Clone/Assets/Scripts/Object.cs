@@ -7,8 +7,8 @@ public class Object : MonoBehaviour
     public GameObject halfForm;
     public void Split(GameObject other)
     {
-        GameObject halfObj = Instantiate(halfForm, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), other.gameObject.transform.rotation);
-        
+        GameObject halfObj = Instantiate(halfForm, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), halfForm.transform.rotation);
+        halfObj.transform.SetParent(other.gameObject.transform.parent);
         foreach (Transform child in halfObj.transform)
         {
             if(child.gameObject.tag == "right")

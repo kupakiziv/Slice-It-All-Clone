@@ -6,18 +6,31 @@ public class HandleHit : MonoBehaviour
 {
     public Rigidbody knifeRb;
     public Transform knifeTransform;
+    UIManager uiManager;
+
+    private void Start()
+    {
+        uiManager = Object.FindObjectOfType<UIManager>();
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "plane")
+        if (other.gameObject.tag == "blankSpace" || other.gameObject.tag == "thorn")
+        {
+            Object.FindObjectOfType<AudioManager>().cutFailVoice.Play();
+            uiManager.LosePanel();
+        }
+        else if (other.gameObject.tag == "plane")
         {
             knifeRb.isKinematic = true;
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "object")
+        if (other.gameObject.tag == "object" || other.gameObject.tag == "finish")
         {
+            Object.FindObjectOfType<AudioManager>().cutFailVoice.Play();
             StartCoroutine(IsTriggerCloseOpen(other.gameObject));
         }
     }
@@ -27,7 +40,11 @@ public class HandleHit : MonoBehaviour
         knifeRb.velocity = new Vector3(0, 2, -1.5f);
         knifeRb.angularVelocity = new Vector3(6f, 0, 0);
         yield return new WaitForSeconds(0.3f);
-        other.GetComponent<BoxCollider>().isTrigger = true;
+        if (other != null)
+        {
+            other.GetComponent<BoxCollider>().isTrigger = true;
+        }
+        
     }
 
 }
