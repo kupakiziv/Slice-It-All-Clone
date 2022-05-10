@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Dictionary<GameObject, int> knifesDict;
     public List<GameObject> knifes;
     GameObject currentKnife;
+    public ParticleSystem particleEffect;
     private void Awake()
     {
         if (PlayerPrefs.GetInt("knife0") == 0)

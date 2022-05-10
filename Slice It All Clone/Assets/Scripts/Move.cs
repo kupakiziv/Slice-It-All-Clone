@@ -16,6 +16,7 @@ public class Move : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && GameManager.start)
         {
+            FindObjectOfType<Move>().transform.GetChild(3).gameObject.SetActive(true);
             touched = true;
             rb.isKinematic = false;
             rb.velocity = new Vector3(0,5,2);

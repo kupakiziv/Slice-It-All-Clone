@@ -18,11 +18,13 @@ public class HandleHit : MonoBehaviour
     {
         if (other.gameObject.tag == "blankSpace" || other.gameObject.tag == "thorn")
         {
+            FindObjectOfType<Move>().transform.GetChild(3).gameObject.SetActive(false);
             Object.FindObjectOfType<AudioManager>().cutFailVoice.Play();
             uiManager.LosePanel();
         }
         else if (other.gameObject.tag == "plane")
         {
+            FindObjectOfType<Move>().transform.GetChild(3).gameObject.SetActive(false);
             knifeRb.isKinematic = true;
         }
     }

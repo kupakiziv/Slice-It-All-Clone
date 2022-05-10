@@ -15,6 +15,7 @@ public class CuttingEdgeHit : MonoBehaviour
     {
         if (other.gameObject.tag == "blankSpace" || other.gameObject.tag == "thorn")
         {
+            Object.FindObjectOfType<GameManager>().particleEffect.Stop();
             uiManager.LosePanel();
         }
         else if (other.gameObject.tag == "object")
@@ -26,6 +27,7 @@ public class CuttingEdgeHit : MonoBehaviour
         }
         else if (other.gameObject.tag == "finish")
         {
+            FindObjectOfType<Move>().transform.GetChild(3).gameObject.SetActive(false);
             knifeRb.isKinematic = true;
             switch (other.gameObject.name)
             {
@@ -56,6 +58,7 @@ public class CuttingEdgeHit : MonoBehaviour
         }
         else if (other.gameObject.tag == "plane")
         {
+            FindObjectOfType<Move>().transform.GetChild(3).gameObject.SetActive(false);
             knifeRb.isKinematic = true;
         }
     }

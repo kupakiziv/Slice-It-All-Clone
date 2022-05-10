@@ -402,6 +402,7 @@ MonoBehaviour:
   - {fileID: 5537034152981118218, guid: 1bc35b53e1ab2104ab67b68ca5eb7302, type: 3}
   - {fileID: 5537034152981118218, guid: 2d878734554adda4a85bcd37196115df, type: 3}
   - {fileID: 5537034152981118218, guid: 642a0c2dcdfcebb4b91202438395890a, type: 3}
+  particleEffect: {fileID: 3961326596593082093, guid: 1f6805e53a8eda9418bb447d8ee5a3a7, type: 3}
 --- !u!4 &95901303
 Transform:
   m_ObjectHideFlags: 0
