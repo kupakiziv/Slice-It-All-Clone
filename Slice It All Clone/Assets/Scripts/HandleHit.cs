@@ -11,7 +11,6 @@ public class HandleHit : MonoBehaviour
     private void Start()
     {
         uiManager = Object.FindObjectOfType<UIManager>();
-
     }
 
     private void OnTriggerEnter(Collider other)

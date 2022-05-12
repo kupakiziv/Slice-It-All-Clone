@@ -6,7 +6,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public GameObject winPanel, losePanel, marketPanel, startPanel, restart;
-    public TMP_Text goldText, currentLevelText, collectedGoldText;
+    public TMP_Text goldText, marketGoldText, currentLevelText, collectedGoldText;
     public GameObject goldImage;
     LevelManager levelManager;
     GameManager gameManager;
@@ -68,6 +68,7 @@ public class UIManager : MonoBehaviour
     }
     public void MarketPanel()
     {
+        marketGoldText.text = GameManager.gold.ToString();
         startPanel.SetActive(false);
         marketPanel.SetActive(true);
         GameManager.start = false;
@@ -90,8 +91,8 @@ public class UIManager : MonoBehaviour
     }
     public void Gold()
     {
-        GameManager.collectedGold += 10;
-        GameManager.gold += 10;
+        GameManager.collectedGold += 1;
+        GameManager.gold += 1;
         PlayerPrefs.SetInt("gold", GameManager.gold);
         goldText.text = GameManager.gold.ToString();
     }

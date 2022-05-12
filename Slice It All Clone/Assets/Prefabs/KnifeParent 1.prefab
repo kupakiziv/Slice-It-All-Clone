@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250475917214069753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0584, y: -0.2, z: -0.721}
+  m_LocalPosition: {x: -0.0584, y: -0.2, z: 0.127}
   m_LocalScale: {x: 0.09460782, y: 0.26397848, z: 0.6300822}
   m_Children: []
   m_Father: {fileID: 5573715847375941406}
@@ -96,7 +96,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.1}
-  m_Center: {x: 0, y: -0.02, z: 1.62}
+  m_Center: {x: 0, y: -0.02, z: 0.31}
 --- !u!54 &8289925891210744084
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5116,7 +5116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7227408856227690785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0584, y: -0.217, z: 1.526}
+  m_LocalPosition: {x: -0.0584, y: -0.217, z: 1.013}
   m_LocalScale: {x: 0.09460782, y: 0.24701215, z: 0.69433796}
   m_Children: []
   m_Father: {fileID: 5573715847375941406}
@@ -5183,7 +5183,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1.15, z: 1.2}
-  m_Center: {x: 0, y: 0, z: -0.71}
+  m_Center: {x: 0, y: 0, z: 0.1}
 --- !u!54 &7669354367161633336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14959,7 +14959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c49ff6d0bb8aadc4db14ad9657e41a3a, type: 3}
       propertyPath: m_Name
-      value: Katana (1)
+      value: Katana
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c49ff6d0bb8aadc4db14ad9657e41a3a, type: 3}

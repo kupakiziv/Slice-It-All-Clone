@@ -15,7 +15,8 @@ public class CuttingEdgeHit : MonoBehaviour
     {
         if (other.gameObject.tag == "blankSpace" || other.gameObject.tag == "thorn")
         {
-            Object.FindObjectOfType<GameManager>().particleEffect.Stop();
+            FindObjectOfType<Move>().transform.GetChild(3).gameObject.SetActive(false);
+            Object.FindObjectOfType<AudioManager>().cutFailVoice.Play();
             uiManager.LosePanel();
         }
         else if (other.gameObject.tag == "object")
